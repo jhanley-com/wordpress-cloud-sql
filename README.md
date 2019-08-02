@@ -3,6 +3,13 @@ WordPress changes to support Google Cloud SQL SSL
 
 Copy db.php to the WordPress directory wp-content. This file extends the WordPress class $wpdb and adds support for Google Cloud SQL SSL client and server certificates.
 
+New code that implements Cloud SQL client and server certificate setup:
+<pre>
+if ( MYSQL_USE_CLIENT_CERTS ) {
+	$this->dbh->ssl_set(MYSQL_CLIENT_KEY, MYSQL_CLIENT_CERT, MYSQL_SERVER_CA, NULL, NULL);
+}
+</pre>
+
 Add the contents of config.php to the WordPress file wp-config.php. Modify for your Google Cloud SQL configuration. Replace the three client and server certificate files with your locations.
 
 <pre>
