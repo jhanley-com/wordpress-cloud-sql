@@ -21,15 +21,15 @@ define('MYSQL_SERVER_CA',   '/config/server-ca.pem');
 </pre>
 
 ## FAQ
-1) Does this modify my WordPress installation?
+Q) Does this modify my WordPress installation?
 
 No. The only WordPress file that is affected (not changed) is wp-db.php. The code in db.php extends the class $wpdb in wp-db.php.
 
-2) Will normal WordPress updates continue to work?
+Q) Will normal WordPress updates continue to work?
 
 Yes. My code does not change the WordPress core files. However, my code does extend the class $wpdb. In the future, WordPress might make a significant change that would require changes to my code.
 
-3) Should I use the Cloud SQL Prox instead of changing WordPress?
+Q) Should I use the Cloud SQL Proxy instead of changing WordPress?
 
 If you are using Google Cloud SQL - Yes, you should use the proxy. If you are not using Cloud SQL - You cannot use the proxy. My goal is to add SSL support to WordPress. This provides more options and better security.
 
@@ -37,7 +37,7 @@ Link to my article on Cloud SQL Proxy:
 
 https://www.jhanley.com/google-cloud-sql-proxy-installing-as-a-service-on-gce/
 
-4) Where do I get the client and server SSL certificates?
+Q) Where do I get the client and server SSL certificates?
 
 This document shows how to setup SSL and download the required certificate files:
 
